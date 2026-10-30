@@ -35,3 +35,25 @@ chat history is not.
 - Files or artifacts updated: all template files
 - Known risk or unresolved issue: none
 - Next best step: adopt the template with `docs/customize.md`, or start a first change with `/opsx-propose`.
+
+### Session 002
+
+- Date: 2026-10-30
+- Goal: Harden the template after the first CI run.
+- Completed:
+  - Updated the GitHub Actions workflow to `actions/checkout@v5` and `actions/setup-node@v5`.
+  - Made the OpenCode entry-point check conditional so adopters can remove `.opencode/` when they use another agent.
+  - Re-ran the full gate and the sample-change archive flow.
+- Verification run:
+  - `./init.sh`
+  - `node scripts/validate-harness.mjs`
+  - `openspec validate --all --strict`
+  - GitHub Actions `Verify` workflow
+- Evidence captured:
+  - Local gate: `VERIFICATION PASSED`.
+  - CI run 41084281159: success.
+  - Sample change archived cleanly to `openspec/specs/service-health/spec.md` in a throwaway copy.
+- Commits: `ci: update GitHub Actions to v5`; `fix: keep the OpenCode integration optional`
+- Files or artifacts updated: `.github/workflows/verify.yml`, `scripts/validate-harness.mjs`, `progress.md`, `session-handoff.md`
+- Known risk or unresolved issue: none
+- Next best step: adopt the template with `docs/customize.md`, or start a first change with `/opsx-propose`.

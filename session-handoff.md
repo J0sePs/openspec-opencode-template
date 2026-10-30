@@ -3,12 +3,12 @@
 ## Verified Now
 
 - What is currently working: the five-subsystem harness, the OpenSpec integration, the verification gate, and the CI workflow.
-- What verification actually ran: `./init.sh`, `node scripts/validate-harness.mjs`, and `openspec validate --all --strict`.
+- What verification actually ran: `./init.sh`, `node scripts/validate-harness.mjs`, `openspec validate --all --strict`, and the GitHub Actions `Verify` workflow.
 
 ## Changed This Session
 
 - Code or behavior added: none — this is a template-only repository.
-- Infrastructure or harness changes: created the template structure, scripts, documentation, and OpenSpec configuration.
+- Infrastructure or harness changes: created the template structure, scripts, documentation, and OpenSpec configuration; updated GitHub Actions to v5; made the OpenCode integration optional for adopters who use another agent.
 
 ## Broken Or Unverified
 

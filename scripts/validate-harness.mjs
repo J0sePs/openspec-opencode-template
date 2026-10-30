@@ -209,6 +209,9 @@ check('Instructions', 'OpenSpec config declares the spec-driven workflow', () =>
 });
 
 check('Instructions', 'OpenCode OpenSpec entry points are installed', () => {
+  if (!existsSync(absolute('.opencode'))) {
+    return 'skipped (no .opencode directory)';
+  }
   for (const command of ['opsx-propose.md', 'opsx-apply.md', 'opsx-verify.md', 'opsx-archive.md']) {
     requireText(join('.opencode/commands', command), 10);
   }
